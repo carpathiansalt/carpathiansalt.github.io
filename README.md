@@ -4,6 +4,6 @@ This repository contains the source code for the [carpathiansalt.com](https://ca
 
 - [Bored Ants App](https://boredants.com)
 - [Vibes-Hunters](https://vibes-hunters.com)
-- [More projects](https://github.com/laurentiu-boghiu)
+- [More projects](https://github.com/carpathiansalt)
 
 Site built and maintained by Laurentiu Boghiu.
