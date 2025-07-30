@@ -1,24 +1,68 @@
 
-// Enhanced Portfolio JavaScript
+// Professional Portfolio JavaScript
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize all components
+  initNavigation();
   initAnimations();
   initSmoothScrolling();
-  initMobileMenu();
   initContactForm();
   initScrollEffects();
-  initFloatingElements();
   initProjectCards();
 });
 
-// Animation initialization
+// Navigation functionality
+function initNavigation() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+}
+
+// Smooth scrolling
+function initSmoothScrolling() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      if (targetSection) {
+        const headerHeight = document.querySelector('.navbar').offsetHeight;
+        const targetPosition = targetSection.offsetTop - headerHeight - 20;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+// Animations
 function initAnimations() {
-  // Hero section animations
+  // Hero animations
   anime({
-    targets: '.hero-text h1',
+    targets: '.hero-title .title-line',
     translateY: [-50, 0],
     opacity: [0, 1],
     duration: 1200,
+    delay: anime.stagger(200),
     easing: 'easeOutExpo'
   });
 
@@ -27,96 +71,105 @@ function initAnimations() {
     translateY: [30, 0],
     opacity: [0, 1],
     duration: 1000,
-    delay: 300,
+    delay: 600,
     easing: 'easeOutExpo'
   });
 
   anime({
-    targets: '.hero-stats .stat',
+    targets: '.hero-stats .stat-item',
     translateY: [30, 0],
     opacity: [0, 1],
-    delay: anime.stagger(150, {start: 600}),
+    delay: anime.stagger(150, {start: 800}),
     duration: 800,
     easing: 'easeOutExpo'
   });
 
   anime({
-    targets: '.hero-cta .btn',
+    targets: '.hero-actions .btn',
     translateY: [30, 0],
     opacity: [0, 1],
-    delay: anime.stagger(200, {start: 900}),
+    delay: anime.stagger(200, {start: 1100}),
     duration: 800,
     easing: 'easeOutExpo'
   });
 
-  // Project cards animation
   anime({
-    targets: '.project-card',
+    targets: '.mascot',
+    translateY: [30, 0],
     opacity: [0, 1],
-    translateY: [50, 0],
-    delay: anime.stagger(200, {start: 1200}),
-    duration: 800,
+    duration: 1000,
+    delay: 1000,
     easing: 'easeOutExpo'
   });
 
-  // Skills animation
-  anime({
-    targets: '.skill-category',
-    opacity: [0, 1],
-    translateX: [-50, 0],
-    delay: anime.stagger(150, {start: 1600}),
-    duration: 800,
-    easing: 'easeOutExpo'
-  });
-}
+  // Section animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-// Smooth scrolling for navigation links
-function initSmoothScrolling() {
-  const navLinks = document.querySelectorAll('nav a, .hero-cta a, .footer-links a');
-  
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      
-      if (href.startsWith('#')) {
-        e.preventDefault();
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
         
-        if (targetElement) {
-          const headerHeight = document.querySelector('header').offsetHeight;
-          const targetPosition = targetElement.offsetTop - headerHeight - 20;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
+        // Animate children with stagger
+        const children = entry.target.querySelectorAll('.expertise-item, .timeline-item, .project-card');
+        if (children.length > 0) {
+          anime({
+            targets: children,
+            translateY: [30, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(100),
+            duration: 600,
+            easing: 'easeOutExpo'
           });
         }
       }
     });
+  }, observerOptions);
+
+  // Observe sections
+  const sections = document.querySelectorAll('.about, .experience, .projects, .contact');
+  sections.forEach(section => observer.observe(section));
+}
+
+// Scroll effects
+function initScrollEffects() {
+  const navbar = document.querySelector('.navbar');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+      navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+      navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+      navbar.style.boxShadow = 'none';
+    }
   });
 }
 
-// Mobile menu functionality
-function initMobileMenu() {
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('nav');
+// Project cards interactions
+function initProjectCards() {
+  const projectCards = document.querySelectorAll('.project-card');
   
-  if (mobileMenuBtn && nav) {
-    mobileMenuBtn.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      mobileMenuBtn.classList.toggle('active');
+  projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-10px) scale(1.02)';
     });
-
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-      });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0) scale(1)';
     });
-  }
+    
+    card.addEventListener('click', () => {
+      // Add click feedback
+      card.style.transform = 'translateY(-5px) scale(0.98)';
+      setTimeout(() => {
+        card.style.transform = 'translateY(-10px) scale(1.02)';
+      }, 150);
+    });
+  });
 }
 
 // Contact form handling
@@ -132,7 +185,7 @@ function initContactForm() {
       const email = formData.get('email');
       const message = formData.get('message');
       
-      // Simple validation
+      // Validation
       if (!name || !email || !message) {
         showNotification('Please fill in all fields', 'error');
         return;
@@ -162,12 +215,12 @@ function showNotification(message, type = 'info') {
   notification.className = `notification notification-${type}`;
   notification.textContent = message;
   
-  // Add styles
+  // Styles
   notification.style.cssText = `
     position: fixed;
     top: 100px;
     right: 20px;
-    padding: 15px 20px;
+    padding: 1rem 1.5rem;
     border-radius: 8px;
     color: white;
     font-weight: 500;
@@ -175,15 +228,16 @@ function showNotification(message, type = 'info') {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     max-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   `;
   
-  // Set background color based on type
+  // Background color based on type
   if (type === 'success') {
     notification.style.background = '#10b981';
   } else if (type === 'error') {
     notification.style.background = '#ef4444';
   } else {
-    notification.style.background = '#c580ff';
+    notification.style.background = '#00d4ff';
   }
   
   document.body.appendChild(notification);
@@ -197,162 +251,15 @@ function showNotification(message, type = 'info') {
   setTimeout(() => {
     notification.style.transform = 'translateX(100%)';
     setTimeout(() => {
-      document.body.removeChild(notification);
+      if (document.body.contains(notification)) {
+        document.body.removeChild(notification);
+      }
     }, 300);
   }, 5000);
 }
 
-// Scroll effects
-function initScrollEffects() {
-  // Header background on scroll
-  const header = document.querySelector('header');
-  
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      header.style.background = 'rgba(20, 26, 31, 0.98)';
-      header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-      header.style.background = 'rgba(20, 26, 31, 0.95)';
-      header.style.boxShadow = 'none';
-    }
-  });
-
-  // Intersection Observer for scroll animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-      }
-    });
-  }, observerOptions);
-
-  // Observe elements for animation
-  const animateElements = document.querySelectorAll('.skill-category, .ai-milestone, .project-card');
-  animateElements.forEach(el => observer.observe(el));
-}
-
-// Floating elements animation
-function initFloatingElements() {
-  const floatingElements = document.querySelectorAll('.float-element');
-  
-  floatingElements.forEach((element, index) => {
-    const speed = element.getAttribute('data-speed') || 1;
-    
-    // Create individual floating animation
-    anime({
-      targets: element,
-      translateY: [-20, 20],
-      translateX: [-10, 10],
-      rotate: [-5, 5],
-      duration: 4000 + (index * 1000),
-      direction: 'alternate',
-      loop: true,
-      easing: 'easeInOutSine',
-      delay: index * 500
-    });
-  });
-}
-
-// Project cards interaction
-function initProjectCards() {
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0) scale(1)';
-    });
-    
-    // Add click sound effect (optional)
-    card.addEventListener('click', () => {
-      // You can add a subtle sound effect here
-      card.style.transform = 'translateY(-5px) scale(0.98)';
-      setTimeout(() => {
-        card.style.transform = 'translateY(-10px) scale(1.02)';
-      }, 150);
-    });
-  });
-}
-
-// Parallax effect for background
-function initParallax() {
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.animated-bg');
-    
-    parallaxElements.forEach(element => {
-      const speed = 0.5;
-      element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-  });
-}
-
-// Typing effect for hero title (optional)
-function initTypingEffect() {
-  const heroTitle = document.querySelector('.hero-text h1');
-  if (!heroTitle) return;
-  
-  const text = heroTitle.textContent;
-  heroTitle.textContent = '';
-  
-  let i = 0;
-  const typeWriter = () => {
-    if (i < text.length) {
-      heroTitle.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 100);
-    }
-  };
-  
-  // Start typing effect after initial animation
-  setTimeout(typeWriter, 1500);
-}
-
-// Initialize additional features
-document.addEventListener('DOMContentLoaded', () => {
-  initParallax();
-  // Uncomment the line below if you want the typing effect
-  // initTypingEffect();
-});
-
-// Add CSS for mobile menu
-const mobileMenuStyles = `
-  @media (max-width: 768px) {
-    nav {
-      position: fixed;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: rgba(20, 26, 31, 0.98);
-      backdrop-filter: blur(10px);
-      flex-direction: column;
-      padding: 20px;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
-      border-top: 1px solid rgba(197, 128, 255, 0.1);
-    }
-    
-    nav.active {
-      transform: translateY(0);
-    }
-    
-    .mobile-menu-btn.active i {
-      transform: rotate(90deg);
-    }
-    
-    .mobile-menu-btn i {
-      transition: transform 0.3s ease;
-    }
-  }
-  
+// Add CSS for animations
+const animationStyles = `
   .animate-in {
     animation: slideInUp 0.6s ease forwards;
   }
@@ -367,9 +274,23 @@ const mobileMenuStyles = `
       transform: translateY(0);
     }
   }
+  
+  .expertise-item,
+  .timeline-item,
+  .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .expertise-item.animate-in,
+  .timeline-item.animate-in,
+  .project-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
-// Inject mobile menu styles
+// Inject animation styles
 const styleSheet = document.createElement('style');
-styleSheet.textContent = mobileMenuStyles;
+styleSheet.textContent = animationStyles;
 document.head.appendChild(styleSheet);
