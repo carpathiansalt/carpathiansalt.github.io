@@ -1,6 +1,26 @@
 
 // Professional Portfolio JavaScript
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Portfolio loaded successfully!");
+  
+  // Check if all sections are present
+  const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+  sections.forEach(section => {
+    const element = document.getElementById(section);
+    if (element) {
+      console.log(`✅ Section "${section}" found`);
+    } else {
+      console.log(`❌ Section "${section}" missing`);
+    }
+  });
+  
+  // Check if anime.js is loaded
+  if (typeof anime !== 'undefined') {
+    console.log("✅ Anime.js loaded successfully");
+  } else {
+    console.log("❌ Anime.js not loaded");
+  }
+  
   initNavigation();
   initAnimations();
   initSmoothScrolling();
