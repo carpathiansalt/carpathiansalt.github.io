@@ -31,8 +31,9 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 p {
   font-size: 1.1rem;
-  color: #a0a0a0;
+  color: #cccccc;
   margin-bottom: 1rem;
+  line-height: 1.7;
 }
 
 /* ===== LAYOUT ===== */
@@ -221,7 +222,7 @@ section {
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: #a0a0a0;
+  color: #cccccc;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -246,7 +247,7 @@ section {
 
 .stat-label {
   font-size: 0.9rem;
-  color: #a0a0a0;
+  color: #cccccc;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
@@ -327,7 +328,7 @@ section {
 
 .about-description {
   font-size: 1.2rem;
-  color: #a0a0a0;
+  color: #cccccc;
   margin-bottom: 3rem;
   line-height: 1.7;
 }
@@ -378,7 +379,7 @@ section {
 }
 
 .expertise-content p {
-  color: #a0a0a0;
+  color: #cccccc;
   font-size: 0.95rem;
   margin: 0;
 }
@@ -435,7 +436,7 @@ section {
 }
 
 .timeline-content p {
-  color: #a0a0a0;
+  color: #cccccc;
   margin: 0;
 }
 
@@ -509,7 +510,7 @@ section {
 }
 
 .project-content p {
-  color: #a0a0a0;
+  color: #cccccc;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -550,7 +551,7 @@ section {
 
 .stat-label {
   font-size: 0.8rem;
-  color: #a0a0a0;
+  color: #cccccc;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
@@ -594,7 +595,7 @@ section {
 }
 
 .project-card.small p {
-  color: #a0a0a0;
+  color: #cccccc;
   margin-bottom: 1.5rem;
 }
 
@@ -613,7 +614,7 @@ section {
 
 .contact-info p {
   font-size: 1.2rem;
-  color: #a0a0a0;
+  color: #cccccc;
   margin-bottom: 2rem;
   line-height: 1.7;
 }
@@ -664,7 +665,7 @@ section {
 }
 
 .contact-label {
-  color: #a0a0a0;
+  color: #cccccc;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -715,7 +716,7 @@ section {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #a0a0a0;
+  color: #cccccc;
 }
 
 /* ===== FOOTER ===== */
@@ -744,7 +745,7 @@ section {
 }
 
 .footer-links a {
-  color: #a0a0a0;
+  color: #cccccc;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -768,7 +769,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #a0a0a0;
+  color: #cccccc;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -781,7 +782,7 @@ section {
 
 .footer-bottom {
   text-align: center;
-  color: #a0a0a0;
+  color: #cccccc;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1rem;
