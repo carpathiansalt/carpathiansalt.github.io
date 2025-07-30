@@ -1,5 +1,5 @@
 
-// Professional Portfolio JavaScript
+// Professional Portfolio JavaScript - Optimized for Performance
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Portfolio loaded successfully!");
   
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("❌ Anime.js not loaded");
   }
   
+  // Initialize with performance optimizations
   initNavigation();
   initAnimations();
   initSmoothScrolling();
@@ -28,6 +29,33 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollEffects();
   initProjectCards();
 });
+
+// Debounce function for performance
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Throttle function for scroll events
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+}
 
 // Navigation functionality
 function initNavigation() {
@@ -154,11 +182,11 @@ function initAnimations() {
   sections.forEach(section => observer.observe(section));
 }
 
-// Scroll effects
+// Scroll effects - Optimized with throttling
 function initScrollEffects() {
   const navbar = document.querySelector('.navbar');
   
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', throttle(() => {
     if (window.scrollY > 100) {
       navbar.style.background = 'rgba(10, 10, 10, 0.98)';
       navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
@@ -166,7 +194,7 @@ function initScrollEffects() {
       navbar.style.background = 'rgba(10, 10, 10, 0.95)';
       navbar.style.boxShadow = 'none';
     }
-  });
+  }, 16)); // ~60fps
 }
 
 // Project cards interactions
