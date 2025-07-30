@@ -3,115 +3,438 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Carpathian Salt | Developer & Creator</title>
+  <title>Laurentiu Boghiu | Full-Stack AI Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Full-Stack Software Engineer specializing in AI, Flutter, and creative tech solutions. Creator of Bored Ants and Vibes Hunters.">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Mono&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
   <div class="animated-bg"></div>
+  
+  <!-- Navigation -->
   <header>
     <div class="logo">
       <img src="assets/ant.svg" alt="Ant Mascot" height="44">
-      <span>Carpathian Salt</span>
+      <span>Laurentiu Boghiu</span>
     </div>
     <nav>
-      <a href="#projects">Projects</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
   </header>
+
   <main>
-    <section class="hero">
-      <h1>Building <span class="neon">Creative Tech</span> for a Bored World</h1>
-      <p>Flutter, AI, Games & Viral Apps • 25+ Years of Coding Experience</p>
-      <div class="mascot-float">
-        <img src="assets/bored-ant.png" alt="Bored Ant" height="90">
-      </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2>🚀 Projects</h2>
-      <div class="project-list">
-        <div class="project-card" onclick="window.open('https://boredants.com','_blank')">
-          <img src="assets/boredants-logo.svg" alt="Bored Ants Logo">
-          <div>
-            <h3>Bored Ants App</h3>
-            <p>
-              Real-time multi-AI assistant, chat, video & viral content platform.<br>
-              <span class="tag">Flutter</span>
-              <span class="tag">LiveKit</span>
-              <span class="tag">AI</span>
-            </p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>AI-Driven <span class="neon">Full-Stack Engineer</span></h1>
+          <p class="hero-subtitle">I specialize in crafting innovative web & mobile apps with <strong>AI integration</strong>, <strong>clean UI</strong>, and <strong>scalable architecture</strong></p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10K+</span>
+              <span class="stat-label">Users Served</span>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
-        <div class="project-card" onclick="window.open('https://vibes-hunters.com','_blank')">
-          <img src="assets/vibes-hunters-logo.svg" alt="Vibes Hunters Logo">
-          <div>
-            <h3>Vibes-Hunters</h3>
-            <p>
-              Location-based adventure game with funky avatars & music genres.<br>
-              <span class="tag">Flutter</span>
-              <span class="tag">Maps</span>
-              <span class="tag">Game</span>
-            </p>
+        <div class="hero-visual">
+          <div class="mascot-float">
+            <img src="assets/bored-ant.png" alt="Bored Ant" height="120">
           </div>
-        </div>
-        <div class="project-card" onclick="window.open('https://github.com/laurentiu-boghiu','_blank')">
-          <img src="assets/csalt.svg" alt="Carpathian Salt Icon">
-          <div>
-            <h3>Other Experiments</h3>
-            <p>
-              Creative code, open-source, and viral video scripts.<br>
-              <span class="tag">Open Source</span>
-              <span class="tag">AI</span>
-              <span class="tag">Fun</span>
-            </p>
+          <div class="floating-elements">
+            <div class="float-element" data-speed="2">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="float-element" data-speed="1.5">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="float-element" data-speed="2.5">
+              <i class="fas fa-code"></i>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
-      <h2>👨‍💻 About Me</h2>
-      <div class="about-block">
-        <img src="assets/portrait.png" alt="Laurentiu Portrait" height="80">
-        <div>
-          <p>
-            <b>Laurentiu Boghiu</b> a.k.a Carpathian Salt<br>
-            London-based, Romanian-born self-taught programmer.<br>
-            <strong>Expertise:</strong> Flutter, Python, AI, Cloud, Games.<br>
-            25+ years coding, building stuff that makes people talk, laugh, or rethink tech.
-          </p>
-          <p>
-            <b>Passion:</b> Coding, AI, viral content, community, and making tech fun again.
-          </p>
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="assets/portrait.png" alt="Laurentiu Boghiu" class="portrait">
+            <div class="experience-badge">
+              <span class="years">25+</span>
+              <span class="text">Years</span>
+            </div>
+          </div>
+          <div class="about-text">
+            <h3>London-based, Romanian-born self-taught programmer</h3>
+            <p>I'm <strong>Laurentiu Boghiu</strong> (a.k.a Carpathian Salt), a passionate full-stack engineer with over 25 years of coding experience. I specialize in building innovative applications that combine cutting-edge AI technology with intuitive user experiences.</p>
+            
+            <div class="expertise-areas">
+              <div class="expertise-item">
+                <i class="fas fa-brain"></i>
+                <span>AI & Machine Learning</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile Development</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-cloud"></i>
+                <span>Cloud Architecture</span>
+              </div>
+              <div class="expertise-item">
+                <i class="fas fa-gamepad"></i>
+                <span>Game Development</span>
+              </div>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="year">1999</div>
+                <div class="content">First code (QBasic, Turbo Pascal)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="year">2015</div>
+                <div class="content">Moved to London, freelance & cloud development</div>
+              </div>
+              <div class="timeline-item">
+                <div class="year">2022</div>
+                <div class="content">Launched Bored Ants App - AI-powered platform</div>
+              </div>
+              <div class="timeline-item">
+                <div class="year">2024</div>
+                <div class="content">Vibes Hunters & viral content creation</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="timeline">
-        <div class="event">1999: First code (QBasic, Turbo Pascal)</div>
-        <div class="event">2015: Moved to London, freelance & cloud</div>
-        <div class="event">2022: Started Bored Ants App</div>
-        <div class="event">2024: Vibes-Hunters & viral TikTok scripts</div>
-        <div class="event">Now: Shipping creative projects for a global audience</div>
       </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">Dart</span>
+              <span class="skill-tag">React Native</span>
+              <span class="skill-tag">LiveKit</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">OpenAI GPT</span>
+              <span class="skill-tag">Claude</span>
+              <span class="skill-tag">Hugging Face</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">Prompt Engineering</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Web Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">REST APIs</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Google Cloud</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-gamepad"></i> Game Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Game Design</span>
+              <span class="skill-tag">Location-based</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Jira</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Experience Section -->
+    <section id="ai-experience" class="ai-experience">
+      <div class="container">
+        <h2 class="section-title">AI Journey Since ChatGPT Launch</h2>
+        <div class="ai-timeline">
+          <div class="ai-milestone">
+            <div class="milestone-date">Nov 2022</div>
+            <div class="milestone-content">
+              <h4>ChatGPT Launch</h4>
+              <p>Started exploring AI capabilities and prompt engineering</p>
+            </div>
+          </div>
+          <div class="ai-milestone">
+            <div class="milestone-date">2023</div>
+            <div class="milestone-content">
+              <h4>AI Integration in Bored Ants</h4>
+              <p>Implemented multi-AI assistant system with real-time chat and video capabilities</p>
+            </div>
+          </div>
+          <div class="ai-milestone">
+            <div class="milestone-date">2024</div>
+            <div class="milestone-content">
+              <h4>Advanced AI Features</h4>
+              <p>Added Claude integration, custom AI models, and AI-powered content generation</p>
+            </div>
+          </div>
+          <div class="ai-milestone">
+            <div class="milestone-date">Present</div>
+            <div class="milestone-content">
+              <h4>AI-First Development</h4>
+              <p>Building AI-native applications and exploring emerging AI technologies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <!-- Main Projects -->
+        <div class="featured-projects">
+          <div class="project-card featured" onclick="window.open('https://boredants.com','_blank')">
+            <div class="project-image">
+              <img src="assets/boredants-logo.svg" alt="Bored Ants">
+              <div class="project-overlay">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Bored Ants App</h3>
+              <p>AI-powered social platform featuring real-time multi-AI assistants, live streaming, and viral content creation. Serving 10K+ users with 100+ language translation capabilities.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">LiveKit</span>
+                <span class="tech-tag">OpenAI</span>
+                <span class="tech-tag">Claude</span>
+                <span class="tech-tag">Real-time AI</span>
+              </div>
+              <div class="project-stats">
+                <div class="stat">
+                  <span class="stat-number">10K+</span>
+                  <span class="stat-label">Users</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">100+</span>
+                  <span class="stat-label">Languages</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">25%</span>
+                  <span class="stat-label">Engagement Boost</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card featured" onclick="window.open('https://vibes-hunters.com','_blank')">
+            <div class="project-image">
+              <img src="assets/vibes-hunters-logo.svg" alt="Vibes Hunters">
+              <div class="project-overlay">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Vibes Hunters</h3>
+              <p>Location-based adventure game with funky avatars, music genres, and social features. Combines gaming mechanics with real-world exploration.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Maps API</span>
+                <span class="tech-tag">Game Engine</span>
+                <span class="tech-tag">Social Features</span>
+                <span class="tech-tag">Location Services</span>
+              </div>
+              <div class="project-stats">
+                <div class="stat">
+                  <span class="stat-number">5K+</span>
+                  <span class="stat-label">Downloads</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">4.8</span>
+                  <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Cities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Projects -->
+        <div class="other-projects">
+          <h3>Other Projects & Experiments</h3>
+          <div class="project-grid">
+            <div class="project-card small" onclick="window.open('https://github.com/laurentiu-boghiu','_blank')">
+              <div class="project-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>Open Source</h4>
+              <p>Creative code experiments and contributions to the developer community</p>
+              <div class="project-tech">
+                <span class="tech-tag">Various</span>
+                <span class="tech-tag">Open Source</span>
+              </div>
+            </div>
+
+            <div class="project-card small">
+              <div class="project-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h4>Viral Content</h4>
+              <p>AI-powered video scripts and content creation for social media platforms</p>
+              <div class="project-tech">
+                <span class="tech-tag">AI Scripts</span>
+                <span class="tech-tag">TikTok</span>
+              </div>
+            </div>
+
+            <div class="project-card small">
+              <div class="project-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h4>AI Experiments</h4>
+              <p>Exploring cutting-edge AI technologies and building proof-of-concepts</p>
+              <div class="project-tech">
+                <span class="tech-tag">AI/ML</span>
+                <span class="tech-tag">Research</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <div>
-        <a href="mailto:hello@carpathiansalt.com">hello@carpathiansalt.com</a> &nbsp;|&nbsp;
-        <a href="https://github.com/laurentiu-boghiu" target="_blank">GitHub</a> &nbsp;|&nbsp;
-        <a href="https://tiktok.com/@draculai" target="_blank">TikTok</a>
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Let's Build Something Amazing Together</h3>
+            <p>I'm always interested in new opportunities, collaborations, and interesting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+            
+            <div class="contact-methods">
+              <a href="mailto:hello@carpathiansalt.com" class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <span>hello@carpathiansalt.com</span>
+              </a>
+              <a href="https://github.com/laurentiu-boghiu" target="_blank" class="contact-method">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://tiktok.com/@draculai" target="_blank" class="contact-method">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
   <footer>
-    &copy; 2025 Carpathian Salt • Made with ☕ and 🐜 in London
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/ant.svg" alt="Ant Mascot" height="32">
+          <span>Laurentiu Boghiu</span>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/laurentiu-boghiu" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://tiktok.com/@draculai" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Laurentiu Boghiu. Made with ☕ and 🐜 in London</p>
+      </div>
+    </div>
   </footer>
+
   <script src="anime.min.js"></script>
   <script src="scripts.js"></script>
 </body>
